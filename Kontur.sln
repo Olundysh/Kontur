@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingNumber", "MissingNum
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PremierLeague", "PremierLeague\PremierLeague.csproj", "{28A66A02-9598-4D34-A515-A26AAB4E0664}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{29F90196-DD8D-4751-8D6B-6D0F0C8046B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{28A66A02-9598-4D34-A515-A26AAB4E0664}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28A66A02-9598-4D34-A515-A26AAB4E0664}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28A66A02-9598-4D34-A515-A26AAB4E0664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F90196-DD8D-4751-8D6B-6D0F0C8046B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F90196-DD8D-4751-8D6B-6D0F0C8046B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F90196-DD8D-4751-8D6B-6D0F0C8046B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F90196-DD8D-4751-8D6B-6D0F0C8046B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
