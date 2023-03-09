@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StdInOut", "StdInOut\StdInOut.csproj", "{795AF52D-FBAE-4D15-AA33-681BA50D838D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndianMath", "IndianMath\IndianMath.csproj", "{5CFB7ACF-8754-4735-B5A6-B368A02A5205}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{795AF52D-FBAE-4D15-AA33-681BA50D838D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{795AF52D-FBAE-4D15-AA33-681BA50D838D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{795AF52D-FBAE-4D15-AA33-681BA50D838D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{795AF52D-FBAE-4D15-AA33-681BA50D838D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CFB7ACF-8754-4735-B5A6-B368A02A5205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CFB7ACF-8754-4735-B5A6-B368A02A5205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CFB7ACF-8754-4735-B5A6-B368A02A5205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CFB7ACF-8754-4735-B5A6-B368A02A5205}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
