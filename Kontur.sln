@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StdInOut", "StdInOut\StdInO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndianMath", "IndianMath\IndianMath.csproj", "{5CFB7ACF-8754-4735-B5A6-B368A02A5205}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissingNumber", "MissingNumber\MissingNumber.csproj", "{C029691A-C530-4131-9BEB-FB9DB59E71DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{5CFB7ACF-8754-4735-B5A6-B368A02A5205}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CFB7ACF-8754-4735-B5A6-B368A02A5205}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CFB7ACF-8754-4735-B5A6-B368A02A5205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C029691A-C530-4131-9BEB-FB9DB59E71DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C029691A-C530-4131-9BEB-FB9DB59E71DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C029691A-C530-4131-9BEB-FB9DB59E71DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C029691A-C530-4131-9BEB-FB9DB59E71DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
