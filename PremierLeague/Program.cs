@@ -1,51 +1,56 @@
-﻿namespace PremierLeague;
+﻿using System.Diagnostics;
+
+namespace PremierLeague;
 
 public static class Program
 {
+    private record TeamScore(string Name, int Score);
+    
     public static void Main(string[] args)
     {
-        var teamNum = int.Parse(Console.ReadLine());
-        List<string> tournamentTable = new List<string>(teamNum);
+        var teamNum = int.Parse(Console.ReadLine()!);
+        var tournamentTable = new List<TeamScore>(teamNum);
 
         for (var i = 0; i < teamNum; i++)
         {
-            tournamentTable.Add(Console.ReadLine());
+            var temporal = Console.ReadLine()!.Split(' ', 2);
+            tournamentTable.Add(new TeamScore(temporal[0], int.Parse(temporal[1])));
         }
 
-        var teams = Console.ReadLine().Split('-', 2);
-        var teamA = teams[0];
-        var teamB = teams[1];
-        
-        string teamAName = "";
-        string teamBName = "";
-        int teamAScore = 0;
-        int teamBScore = 0;
-        int teamAPosition = 0;
+        var teams = Console.ReadLine()!.Split('-', 2);
 
-        for (var i = 0; i < teamNum; i++)
+        TeamScore? teamA = null;
+        TeamScore? teamB = null;
+        var teamAPosition = 0;
+
+        for (var i = 0; i < teamNum && (teamA is null || teamB is null); i++)
         {
-            var temporal = tournamentTable[i].Split(' ', 2);
-            if (temporal[0].Equals(teamA, StringComparison.OrdinalIgnoreCase))
+            var team = tournamentTable[i];
+
+            if (teamA is null && team.Name.Equals(teams[0], StringComparison.OrdinalIgnoreCase))
             {
-                teamAName = temporal[0];
-                teamAScore = int.Parse(temporal[1]);
+                teamA = team;
                 teamAPosition = i + 1;
             }
-
-            if (temporal[0].Equals(teamB, StringComparison.OrdinalIgnoreCase))
+            else if (teamB is null && team.Name.Equals(teams[1], StringComparison.OrdinalIgnoreCase))
             {
-                teamBName = temporal[0];
-                teamBScore = int.Parse(temporal[1]);
+                teamB = team;
             }
         }
+        
+        Debug.Assert(teamA is not null);
+        Debug.Assert(teamB is not null);
 
         int win = teamAPosition;
         int equal = teamAPosition;
-        int lose = teamAPosition;
-        
+        int lose;
 
-        if (((teamAScore - teamBScore) == 3 && string.CompareOrdinal(teamBName, teamAName) > 0) ||
-            (teamAScore - teamBScore) > 3 || teamAPosition == teamNum) lose = teamAPosition;
+        if ((teamA.Score - teamB.Score == 3 && string.CompareOrdinal(teamB.Name, teamA.Name) > 0)
+            || teamA.Score - teamB.Score > 3
+            || teamAPosition == teamNum)
+        {
+            lose = teamAPosition;
+        }
         else
         {
             lose = teamAPosition + 1;  
@@ -61,27 +66,26 @@ public static class Program
         
         for (var i = teamAPosition - 2; i >= 0; i--)
         {
-            var temporal = tournamentTable[i].Split(' ', 2);
+            var team = tournamentTable[i];
             
-            if (int.Parse(temporal[1]) < teamAScore + 1)
+            if (team.Score < teamA.Score + 1)
             {
                 equal = i + 1;
             }
-
-            if (int.Parse(temporal[1]) == teamAScore + 1)
+            else if (team.Score == teamA.Score + 1)
             {
-                equal = string.CompareOrdinal(temporal[0], teamAName) > 0 ? i + 1 : teamAPosition;
+                equal = string.CompareOrdinal(team.Name, teamA.Name) > 0 ? i + 1 : teamAPosition;
             }
 
-            if (int.Parse(temporal[1]) < teamAScore + 3)
+            if (team.Score < teamA.Score + 3)
             {
                 win = i + 1;
                 break;
             }
 
-            if (int.Parse(temporal[1]) == teamAScore + 3)
+            if (team.Score == teamA.Score + 3)
             {
-                win = string.CompareOrdinal(temporal[0], teamAName) > 0 ? i + 1 : teamAPosition;
+                win = string.CompareOrdinal(team.Name, teamA.Name) > 0 ? i + 1 : teamAPosition;
                 break;
             }
         }
