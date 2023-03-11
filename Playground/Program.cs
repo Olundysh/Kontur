@@ -4,7 +4,7 @@ public static class Program
 {
     public static void Main(string[] args)
     {
-        var nM = Console.ReadLine().Split(' ', 2);
+        var nM = Console.ReadLine()!.Split(' ', 2);
 
         var n = int.Parse(nM[0]);
         var m = int.Parse(nM[1]);
@@ -15,14 +15,10 @@ public static class Program
         
         for (var i = 0; i < n; i++)
         {
-            var line = Console.ReadLine();
+            var line = Console.ReadLine()!;
             var localCounter = 1;
 
-            if (line.Substring(horizontalStart, horizontalLength).Contains('*'))
-            {
-                localCounter = 1;
-            }
-            else
+            if (!line.Substring(horizontalStart, horizontalLength).Contains('*'))
             {
                 localCounter++;
                 if (localCounter > counter) counter = localCounter;
